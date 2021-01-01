@@ -1,0 +1,16 @@
+.home-image{
+    height: 700px;
+    width: 400px;
+    background: rgb(149, 177, 229);
+}
+
+.home-middle{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.text-end{
+    text-align: end;
+}
