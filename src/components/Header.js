@@ -1,9 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import SearchIcon from "@material-ui/icons/Search";
-import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
-import MenuIcon from "@material-ui/icons/Menu";
-import "./Header.css";
+import { NavLink } from "react-router-dom";
+import styled from "styled-components";
 
 const links = [
   {
@@ -26,26 +23,61 @@ const links = [
   },
 ];
 
+const StyledLink = styled(NavLink)`
+  padding: 1rem 2rem;
+  text-decoration: none;
+  color: #000;
+
+  &.active > span {
+    border-bottom: 3px solid #f649ce;
+  }
+`;
+
+const Navbar = styled.nav`
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  margin: auto;
+  align-items: center;
+`;
+const StyledUl = styled.ul`
+  justify-self: end;
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+`;
+const StyledLi = styled.li`
+  font-family: "Roboto", sans-serif;
+  font-size: 22px;
+`;
+const Logo = styled.h1`
+  justify-self: center;
+  font-family: "Poiret One", cursive;
+  font-size: 2.6rem;
+  font-weight: normal;
+  color: #f649ce;
+`;
+
+const LinkText = styled.span`
+  padding-bottom: 1rem;
+`;
+
 function Header() {
   return (
     <header>
-      <p className="nav-logo">Logo</p>
+      <Navbar>
+        <Logo>Company</Logo>
 
-      <ul className="nav-links">
-
-        {
-          links.map(link =>(
-            <Link to={link.url}><li>{link.title}</li></Link>
-          ))
-        }
-
-      </ul>
-
-      <div className="nav-social">
-        <ShoppingBasketIcon />
-        <SearchIcon />
-        <MenuIcon />
-      </div>
+        <StyledUl>
+          {links.map((link) => (
+            <StyledLi>
+              <StyledLink to={link.url} exact={true}>
+                <LinkText>{link.title}</LinkText>
+              </StyledLink>
+            </StyledLi>
+          ))}
+        </StyledUl>
+      </Navbar>
     </header>
   );
 }
