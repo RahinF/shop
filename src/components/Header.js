@@ -59,7 +59,7 @@ const Logo = styled.h1`
 `;
 
 const LinkText = styled.span`
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
 `;
 
 function Header() {

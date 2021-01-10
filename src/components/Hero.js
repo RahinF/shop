@@ -2,10 +2,13 @@ import React from "react";
 import SocialMedia from "./SocialMedia";
 import styled from "styled-components";
 import LazyImage from "./LazyImage";
-import pattern from "./backgroundPattern.svg";
+import bgPattern from "./bg-pattern.svg";
+import heroImage from "./hero-image.jpg";
 
-const Flexbox = styled.div`
-  display: flex;
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3rem;
   max-width: 1088px;
   margin: 3rem auto 0;
 `;
@@ -48,11 +51,8 @@ const Button = styled.button`
   }
 `;
 
-const SocialMediaOuter = styled.div`
+const SocialMediaContainer = styled.div`
   align-self: end;
-`;
-
-const SocialMediaInner = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,13 +69,14 @@ const SocialMediaInner = styled.div`
 const ImageGrid = styled.div`
   display: grid;
   grid-template: repeat(14, 50px) / repeat(10, 50px);
+  justify-content: end;
 `;
 const ImageContainer = styled.div`
   grid-area: 1 / 2 / span 13 / span 8;
 `;
 
 const PatternBackground = styled.div`
-  background: url(${pattern});
+  background: url(${bgPattern});
   background-size: 10px 10px;
 `;
 const PatternLeft = styled(PatternBackground)`
@@ -87,7 +88,7 @@ const PatternRight = styled(PatternBackground)`
 
 function Hero() {
   return (
-    <Flexbox>
+    <Grid>
       <HeroLeft>
         <HeroInfoContainer>
           <Heading>Fashion Revolution</Heading>
@@ -98,11 +99,9 @@ function Hero() {
           <Button>Shop Now</Button>
         </HeroInfoContainer>
 
-        <SocialMediaOuter>
-          <SocialMediaInner>
-            <SocialMedia />
-          </SocialMediaInner>
-        </SocialMediaOuter>
+        <SocialMediaContainer>
+          <SocialMedia />
+        </SocialMediaContainer>
       </HeroLeft>
 
       <ImageGrid>
@@ -110,15 +109,10 @@ function Hero() {
         <PatternRight />
 
         <ImageContainer>
-          <LazyImage
-            height="650"
-            width="400"
-            src="https://i.pinimg.com/originals/83/bd/e3/83bde36bb153668f7813d1e33d20c1b7.jpg"
-            alt="..."
-          />
+          <LazyImage height="650" width="400" src={heroImage} alt="..." />
         </ImageContainer>
       </ImageGrid>
-    </Flexbox>
+    </Grid>
   );
 }
 
