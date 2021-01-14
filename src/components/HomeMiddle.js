@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import LazyImage from "../components/LazyImage";
+import { Container, Paragraph, StyledH2 } from "../style";
 
-const Grid = styled.div`
+const Flexbox = styled(Container)`
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  max-width: 1088px;
   margin: auto;
   margin-top: 165px;
 `;
@@ -16,19 +17,9 @@ const ItemGrid = styled.div`
   width: min-content;
 `;
 
-const Heading = styled.h2`
-  font-family: "Poiret One", cursive;
-  font-size: 3rem;
-  font-weight: normal;
+const Heading = styled(StyledH2)`
   margin-top: 0;
   margin-bottom: 0.3rem;
-`;
-
-const Text = styled.p`
-  color: #7b7878;
-  font-size: 1.3rem;
-  font-family: "Roboto", sans-serif;
-  line-height: 1.6;
 `;
 
 const TextRightAlign = styled.div`
@@ -37,7 +28,7 @@ const TextRightAlign = styled.div`
 
 function HomeMiddle() {
   return (
-    <Grid>
+    <Flexbox>
       <ItemGrid>
         <LazyImage
           height="650"
@@ -48,20 +39,20 @@ function HomeMiddle() {
 
         <div>
           <Heading>Fashion Evolution</Heading>
-          <Text>
+          <Paragraph>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio
             cumque provident aut et mollitia.
-          </Text>
+          </Paragraph>
         </div>
       </ItemGrid>
 
       <ItemGrid>
         <TextRightAlign>
           <Heading>Trendy Wear</Heading>
-          <Text>
+          <Paragraph>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio
             cumque provident aut et mollitia.
-          </Text>
+          </Paragraph>
         </TextRightAlign>
 
         <LazyImage
@@ -71,7 +62,7 @@ function HomeMiddle() {
           alt="..."
         />
       </ItemGrid>
-    </Grid>
+    </Flexbox>
   );
 }
 

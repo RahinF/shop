@@ -2,53 +2,26 @@ import React from "react";
 import SocialMedia from "./SocialMedia";
 import styled from "styled-components";
 import LazyImage from "./LazyImage";
-import bgPattern from "./bg-pattern.svg";
 import heroImage from "./hero-image.jpg";
+import { Container, Paragraph, Button, PatternBackground } from "../style";
 
-const Grid = styled.div`
+const Grid = styled(Container)`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template: repeat(3, 1fr) / repeat(2, 1fr);
   column-gap: 3rem;
-  max-width: 1088px;
   margin: 3rem auto 0;
 `;
 
-const HeroLeft = styled.div`
-  display: grid;
-`;
-
-const HeroInfoContainer = styled.div`
-  align-self: center;
-`;
-
 const Heading = styled.h1`
+  align-self: end;
   font-family: "Poiret One", cursive;
   font-size: 4rem;
   font-weight: normal;
   margin-bottom: 0;
 `;
 
-const Text = styled.p`
-  color: #7b7878;
+const Text = styled(Paragraph)`
   font-size: 1.5rem;
-  font-family: "Roboto", sans-serif;
-  line-height: 1.6;
-`;
-
-const Button = styled.button`
-  background: none;
-  border: 3px solid #f649ce;
-  color: #f649ce;
-  padding: 1rem 3rem;
-  margin-top: 2rem;
-  font-family: "Roboto", sans-serif;
-  font-size: 22px;
-
-  &:hover {
-    background: #f649ce;
-    color: #fff;
-    cursor: pointer;
-  }
 `;
 
 const SocialMediaContainer = styled.div`
@@ -67,50 +40,43 @@ const SocialMediaContainer = styled.div`
 `;
 
 const ImageGrid = styled.div`
-  display: grid;
-  grid-template: repeat(14, 50px) / repeat(10, 50px);
-  justify-content: end;
-`;
-const ImageContainer = styled.div`
-  grid-area: 1 / 2 / span 13 / span 8;
+  grid-area: 1 / 2 / span 3;
+  align-self: center;
+
+  display: flex;
+  justify-content: center;
 `;
 
-const PatternBackground = styled.div`
-  background: url(${bgPattern});
-  background-size: 10px 10px;
-`;
-const PatternLeft = styled(PatternBackground)`
-  grid-area: 10 / 1 / span 5 / span 4;
-`;
-const PatternRight = styled(PatternBackground)`
-  grid-area: 1 / 10 / span 5;
+const ImageContainer = styled.div`
+  margin-bottom: 3.3rem;
+  margin-left: -150px;
 `;
 
 function Hero() {
   return (
     <Grid>
-      <HeroLeft>
-        <HeroInfoContainer>
-          <Heading>Fashion Revolution</Heading>
-          <Text>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio
-            cumque provident aut et mollitia.
-          </Text>
-          <Button>Shop Now</Button>
-        </HeroInfoContainer>
+      <Heading>Fashion Revolution</Heading>
 
-        <SocialMediaContainer>
-          <SocialMedia />
-        </SocialMediaContainer>
-      </HeroLeft>
+      <div>
+        <Text>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio cumque
+          provident aut et mollitia.
+        </Text>
+        <Button>Shop Now</Button>
+      </div>
+
+      <SocialMediaContainer>
+        <SocialMedia />
+      </SocialMediaContainer>
 
       <ImageGrid>
-        <PatternLeft />
-        <PatternRight />
+        <PatternBackground patternHeight="200px" patternWidth="200px" bottom />
 
         <ImageContainer>
           <LazyImage height="650" width="400" src={heroImage} alt="..." />
         </ImageContainer>
+
+        <PatternBackground patternHeight="200px" patternWidth="50px" />
       </ImageGrid>
     </Grid>
   );
