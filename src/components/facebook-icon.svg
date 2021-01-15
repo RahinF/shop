@@ -1,0 +1,15 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="18.552"
+  height="32.905"
+  viewBox="0 0 18.552 32.905"
+>
+  <path
+    id="facebook-f-brands"
+    d="M38.357,17.384l.858-5.593H33.849V8.161c0-1.53.75-3.022,3.153-3.022h2.44V.378A29.752,29.752,0,0,0,35.111,0C30.692,0,27.8,2.679,27.8,7.528v4.263H22.89v5.593H27.8V30.9h6.046V17.384Z"
+    transform="translate(-21.89 1)"
+    fill="none"
+    stroke="#7b7878"
+    stroke-width="2"
+  />
+</svg>
