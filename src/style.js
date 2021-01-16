@@ -1,8 +1,21 @@
 import styled from "styled-components";
 import bgPattern from "./components/bg-pattern.svg";
+import { mediaQueries } from "./mediaQueries";
 
 const Container = styled.div`
-  max-width: 1088px;
+  ${mediaQueries("sm")`
+  max-width: 514px;
+  `}
+
+  ${mediaQueries("md")`
+  max-width: 690px;
+  `}
+
+  ${mediaQueries("lg")`
+  max-width: 1200px;
+  `}
+
+  padding: 0 1rem;
   margin: auto;
 `;
 
@@ -24,7 +37,6 @@ const Button = styled.button`
   border: 3px solid #f649ce;
   color: #f649ce;
   padding: 1rem 3rem;
-  margin-top: 2rem;
   font-family: "Roboto", sans-serif;
   font-size: 22px;
 
@@ -38,9 +50,9 @@ const Button = styled.button`
 const PatternBackground = styled.div`
   background: url(${bgPattern});
   background-size: 10px 10px;
-  height: ${props => props.patternHeight};
-  width: ${props => props.patternWidth};
-  align-self: ${props => props.bottom ? "flex-end" : "flex-start"};
+  height: ${(props) => props.patternHeight};
+  width: ${(props) => props.patternWidth};
+  align-self: ${(props) => (props.bottom ? "flex-end" : "flex-start")};
 `;
 
 export { Container, StyledH2, Paragraph, Button, PatternBackground };

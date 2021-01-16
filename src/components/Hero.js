@@ -4,11 +4,17 @@ import styled from "styled-components";
 import LazyImage from "./LazyImage";
 import heroImage from "./hero-image.jpg";
 import { Container, Paragraph, Button, PatternBackground } from "../style";
+import { mediaQueries } from "../mediaQueries";
 
 const Grid = styled(Container)`
   display: grid;
-  grid-template: repeat(3, 1fr) / repeat(2, 1fr);
-  column-gap: 3rem;
+  gap: 1rem 0;
+
+  ${mediaQueries("md")`
+  grid-template: repeat(3, auto) / repeat(2, 1fr);
+  gap: 0 3rem;`
+  }
+
   margin: 3rem auto 0;
 `;
 
@@ -17,11 +23,29 @@ const Heading = styled.h1`
   font-family: "Poiret One", cursive;
   font-size: 4rem;
   font-weight: normal;
+
+  ${mediaQueries("md")`
   margin-bottom: 0;
+  `}
+  
 `;
 
 const Text = styled(Paragraph)`
   font-size: 1.5rem;
+`;
+
+const TextContainer = styled.div`
+display: grid;
+
+button {
+    justify-self: center;
+   
+
+    ${mediaQueries("md")`
+    justify-self: baseline;
+    align-self: baseline;
+    `}
+}
 `;
 
 const SocialMediaContainer = styled.div`
@@ -40,7 +64,13 @@ const SocialMediaContainer = styled.div`
 `;
 
 const ImageGrid = styled.div`
-  grid-area: 1 / 2 / span 3;
+  grid-row: 2;
+
+  ${mediaQueries("md")`
+  grid-area: 1 / 2 / span 3;`
+  }
+
+
   align-self: center;
 
   display: flex;
@@ -57,13 +87,13 @@ function Hero() {
     <Grid>
       <Heading>Fashion Revolution</Heading>
 
-      <div>
+      <TextContainer>
         <Text>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio cumque
           provident aut et mollitia.
         </Text>
         <Button>Shop Now</Button>
-      </div>
+      </TextContainer>
 
       <SocialMediaContainer>
         <SocialMedia />

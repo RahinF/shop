@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import {Container} from "../style"
 
 const links = [
   {
@@ -33,8 +34,7 @@ const StyledLink = styled(NavLink)`
   }
 `;
 
-const Navbar = styled.nav`
-  max-width: 1000px;
+const Navbar = styled(Container)`
   display: grid;
   grid-template-columns: 1fr 4fr;
   margin: auto;
