@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import {Container} from "../style"
+import {Container} from "../globalStyles"
 
 const links = [
   {

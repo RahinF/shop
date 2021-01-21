@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Container, StyledH2, Paragraph } from "../style";
+import { Container, StyledH2, Paragraph } from "../globalStyles";
 
 const Flexbox = styled(Container)`
   display: flex;

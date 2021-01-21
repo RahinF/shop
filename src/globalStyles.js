@@ -1,6 +1,12 @@
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import bgPattern from "./components/bg-pattern.svg";
 import { mediaQueries } from "./mediaQueries";
+
+const GlobalStyle = createGlobalStyle`
+body {
+  background: #fdfafd;
+}
+`;
 
 const Container = styled.div`
   ${mediaQueries("sm")`
@@ -55,4 +61,4 @@ const PatternBackground = styled.div`
   align-self: ${(props) => (props.bottom ? "flex-end" : "flex-start")};
 `;
 
-export { Container, StyledH2, Paragraph, Button, PatternBackground };
+export { GlobalStyle, Container, StyledH2, Paragraph, Button, PatternBackground };

@@ -6,12 +6,12 @@ import Home from "./pages/Home";
 import Tesimonial from "./pages/Testimonial";
 import Shop from "./pages/Shop";
 import Contact from "./pages/Contact";
-import "./App.css"
+import {GlobalStyle} from "./globalStyles"
 
 function App() {
   return (
     <>
-      
+      <GlobalStyle/>
       <Router>
         <Header />
         <Switch>
