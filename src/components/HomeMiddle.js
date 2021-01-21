@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import LazyImage from "../components/LazyImage";
 import { Container, Paragraph, StyledH2 } from "../globalStyles";
+import { motion } from "framer-motion";
 
 const Flexbox = styled(Container)`
   display: flex;
@@ -17,10 +18,10 @@ const ItemGrid = styled.div`
   width: min-content;
 `;
 
-const Heading = styled(StyledH2)`
+const Heading = motion.custom(styled(StyledH2)`
   margin-top: 0;
   margin-bottom: 0.3rem;
-`;
+`);
 
 const TextRightAlign = styled.div`
   text-align: end;
@@ -38,7 +39,7 @@ function HomeMiddle() {
         />
 
         <div>
-          <Heading>Fashion Evolution</Heading>
+          <Heading animate={{ scale: 2 }}>Fashion Evolution</Heading>
           <Paragraph>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio
             cumque provident aut et mollitia.
