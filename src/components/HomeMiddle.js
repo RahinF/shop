@@ -31,15 +31,16 @@ function HomeMiddle() {
   return (
     <Flexbox>
       <ItemGrid>
-        <LazyImage
-          height="650"
-          width="400"
-          src="https://i.pinimg.com/originals/83/bd/e3/83bde36bb153668f7813d1e33d20c1b7.jpg"
-          alt="..."
-        />
-
+        <motion.div initial={{ x: -100 }} animate={{  x: 0 }}>
+          <LazyImage
+            height="650"
+            width="400"
+            src="https://i.pinimg.com/originals/83/bd/e3/83bde36bb153668f7813d1e33d20c1b7.jpg"
+            alt="..."
+          />
+        </motion.div>
         <div>
-          <Heading animate={{ scale: 2 }}>Fashion Evolution</Heading>
+          <Heading>Fashion Evolution</Heading>
           <Paragraph>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio
             cumque provident aut et mollitia.
