@@ -61,4 +61,11 @@ const PatternBackground = styled.div`
   align-self: ${(props) => (props.bottom ? "flex-end" : "flex-start")};
 `;
 
-export { GlobalStyle, Container, StyledH2, Paragraph, Button, PatternBackground };
+export {
+  GlobalStyle,
+  Container,
+  StyledH2,
+  Paragraph,
+  Button,
+  PatternBackground,
+};

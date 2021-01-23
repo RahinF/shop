@@ -3,6 +3,7 @@ import styled from "styled-components";
 import LazyImage from "../components/LazyImage";
 import { Container, Paragraph, StyledH2 } from "../globalStyles";
 import { motion } from "framer-motion";
+import { mediaQueries } from "../mediaQueries";
 
 const Flexbox = styled(Container)`
   display: flex;
@@ -15,7 +16,11 @@ const Flexbox = styled(Container)`
 const ItemGrid = styled.div`
   display: grid;
   row-gap: 3.5rem;
+
+  ${mediaQueries('sm')`
   width: min-content;
+  `}
+  
 `;
 
 const Heading = motion.custom(styled(StyledH2)`

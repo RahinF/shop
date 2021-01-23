@@ -1,6 +1,9 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
+import { mediaQueries } from "../mediaQueries";
+
+
 
 const ImagePlaceholder = styled.div`
   background: #7b7878;
@@ -8,23 +11,36 @@ const ImagePlaceholder = styled.div`
   width: ${props => props.containerWidth}px;
 `;
 
-function LazyContainer({ height, width, src, alt }) {
+const Image = styled.img`
+  ${mediaQueries('sm', 'max')`
+  height: auto;
+  width: 100%;
+  `}
+  
+`;
+
+function LazyImage({ height, width, src, alt }) {
 
   const [ref, inView] = useInView({
     triggerOnce: true,
-    rootMargin: "-100px",
+    rootMargin: "200px",
   });
-  
+
+
+
   return (
+
+
 
     <>
       {inView ?
-        <img
+        <Image
           height={height}
           width={width}
           src={src}
           alt={alt}
           loading="lazy"
+
         />
         : <ImagePlaceholder
           ref={ref}
@@ -34,4 +50,4 @@ function LazyContainer({ height, width, src, alt }) {
   );
 }
 
-export default LazyContainer;
+export default LazyImage;
