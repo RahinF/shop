@@ -1,26 +1,26 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import {Container} from "../globalStyles"
+import { Container } from "./globalStyles";
 
 const links = [
   {
     title: "Home",
     url: "/",
   },
-
   {
-    title: "Testimonial",
-    url: "/testimonial",
+    title: "Contact",
+    url: "/contact",
   },
+
   {
     title: "Shop",
     url: "/shop",
   },
 
   {
-    title: "Contact",
-    url: "/contact",
+    title: "Checkout",
+    url: "/checkout",
   },
 ];
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import SocialMedia from './SocialMedia'
-import { Container } from "../globalStyles"
+import { Container } from "./globalStyles"
 
 function Footer() {
     return (

@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import LazyImage from "../components/LazyImage";
-import { Container, Paragraph, StyledH2 } from "../globalStyles";
+import LazyImage from "./LazyImage";
+import { Container, Paragraph, StyledH2 } from "./globalStyles";
 import { motion } from "framer-motion";
-import { mediaQueries } from "../mediaQueries";
+import { mediaQueries } from "./mediaQueries";
 
 const Flexbox = styled(Container)`
   display: flex;

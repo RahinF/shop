@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { Container, StyledH2, Paragraph } from "../globalStyles";
+import { Container, StyledH2, Paragraph } from "./globalStyles";
 import LazyImage from "./LazyImage";
 import { motion } from "framer-motion";
-import { mediaQueries } from "../mediaQueries";
+import { mediaQueries } from "./mediaQueries";
 
 const images = [
   {

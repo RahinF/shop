@@ -1,7 +1,7 @@
 import React from "react";
-import Gallery from "../components/Gallery";
-import Hero from "../components/Hero";
-import HomeMiddle from "../components/HomeMiddle";
+import Gallery from "./Gallery";
+import Hero from "./Hero";
+import HomeMiddle from "./HomeMiddle";
 
 function Home() {
   return (

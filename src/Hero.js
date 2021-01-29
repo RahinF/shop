@@ -3,8 +3,8 @@ import SocialMedia from "./SocialMedia";
 import styled from "styled-components";
 import LazyImage from "./LazyImage";
 import heroImage from "./hero-image.jpg";
-import { Container, Paragraph, Button, PatternBackground } from "../globalStyles";
-import { mediaQueries } from "../mediaQueries";
+import { Container, Paragraph, Button, PatternBackground } from "./globalStyles";
+import { mediaQueries } from "./mediaQueries";
 
 const Grid = styled(Container)`
   display: grid;

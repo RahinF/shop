@@ -1,9 +1,10 @@
 import styled, { createGlobalStyle } from "styled-components";
-import bgPattern from "./components/bg-pattern.svg";
+import bgPattern from "./bg-pattern.svg";
 import { mediaQueries } from "./mediaQueries";
 
 const GlobalStyle = createGlobalStyle`
 body {
+  margin: 0;
   background: #fdfafd;
 }
 `;

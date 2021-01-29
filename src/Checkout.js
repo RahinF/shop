@@ -1,10 +1,10 @@
 import React from 'react'
 
-function Testimonial() {
+function Checkout() {
     return (
         <div>
             <div>image</div>
-        <h1>Testimonial</h1>
+        <h1>Checkout</h1>
         <blockquote>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam ratione
           rerum saepe. Laudantium repellendus error dicta quasi. Perspiciatis,
@@ -14,4 +14,4 @@ function Testimonial() {
     )
 }
 
-export default Testimonial
+export default Checkout

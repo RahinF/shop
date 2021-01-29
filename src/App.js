@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Home from "./pages/Home";
-import Tesimonial from "./pages/Testimonial";
-import Shop from "./pages/Shop";
-import Contact from "./pages/Contact";
+import Footer from "./Footer";
+import Header from "./Header";
+import Home from "./Home";
+import Checkout from "./Checkout";
+import Shop from "./Shop";
+import Contact from "./Contact";
 import {GlobalStyle} from "./globalStyles"
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
         <Header />
         <Switch>
           <Route path='/' exact component={Home} />
-          <Route path='/testimonial' component={Tesimonial} />
+          <Route path='/checkout' component={Checkout} />
           <Route path='/shop' component={Shop} />
           <Route path='/contact' component={Contact} />
         </Switch>
