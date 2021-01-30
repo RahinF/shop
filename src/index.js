@@ -1,12 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import { CartProvider } from "./CartProvider";
+import reducer, { initialState } from "./cartReducer";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
 
+    <CartProvider initialState={initialState} reducer={reducer}>
+      <App />
+    </CartProvider>
+
+  ,
+  document.getElementById("root")
+);

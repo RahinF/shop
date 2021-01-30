@@ -1,6 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { useCartContext } from "./CartProvider";
+import { getItemTotal } from "./cartReducer";
 import { Container } from "./globalStyles";
 
 const links = [
@@ -62,20 +64,28 @@ const LinkText = styled.span`
   padding-bottom: 0.5rem;
 `;
 
+const CartTotal = styled.div`
+  background: #8d8d8d;
+  padding: 0.3rem;
+`;
+
 function Header() {
+  const [{ cart }] = useCartContext();
+
   return (
     <header>
       <Navbar>
         <Logo>Company</Logo>
 
         <StyledUl>
-          {links.map((link) => (
-            <StyledLi>
+          {links.map((link, index) => (
+            <StyledLi key={index}>
               <StyledLink to={link.url} exact={true}>
                 <LinkText>{link.title}</LinkText>
               </StyledLink>
             </StyledLi>
           ))}
+          <CartTotal>{getItemTotal(cart)}</CartTotal>
         </StyledUl>
       </Navbar>
     </header>

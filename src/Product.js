@@ -1,11 +1,14 @@
 import React from "react";
 import { useCartContext } from "./CartProvider";
 
-function Product({ id, name }) {
+function Product({ id, name, price }) {
   const [, dispatch] = useCartContext();
 
   const addToCart = () => {
-    dispatch({ type: "ADD_TO_CART", item: { id: id, name: name } });
+    dispatch({
+      type: "ADD_TO_CART",
+      item: { id: id, name: name, price: price },
+    });
   };
 
   const removeFromCart = () => {
@@ -15,8 +18,9 @@ function Product({ id, name }) {
     <div>
       <p>{id}</p>
       <p>{name}</p>
+      <p>{price}</p>
       <button onClick={addToCart}>Add</button>
-      <button onClick={addToCart}>Remove</button>
+      <button onClick={removeFromCart}>Remove</button>
     </div>
   );
 }

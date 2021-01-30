@@ -7,12 +7,10 @@ import Checkout from "./Checkout";
 import Shop from "./Shop";
 import Contact from "./Contact";
 import { GlobalStyle } from "./globalStyles";
-import { CartProvider } from "./CartProvider";
-import reducer, { initialState } from "./cartReducer";
 
 function App() {
   return (
-    <CartProvider initialState={initialState} reducer={reducer}>
+    <>
       <GlobalStyle />
       <Router>
         <Header />
@@ -24,7 +22,7 @@ function App() {
         </Switch>
       </Router>
       <Footer />
-    </CartProvider>
+    </>
   );
 }
 
