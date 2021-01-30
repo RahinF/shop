@@ -1,16 +1,22 @@
-import React from 'react'
+import React, { useState } from "react";
+import Product from "./Product";
+import {Container} from "./globalStyles"
+
 
 function Shop() {
-    return (
-        <div>
+  const [items, setItems] = useState([
+    { id: 1, name: "Dress" },
+    { id: 2, name: "Top" },
+    { id: 3, name: "Shirt" },
+  ]);
 
-
-            <div>Product 1</div>
-            <div>Product 2</div>
-            <div>Product 3</div>
-
-        </div>
-    )
+  return (
+    <Container>
+      {items.map((item) => (
+        <Product key={item.id} id={item.id} name={item.name} />
+      ))}
+    </Container>
+  );
 }
 
-export default Shop
+export default Shop;
