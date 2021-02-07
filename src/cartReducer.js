@@ -1,50 +1,82 @@
-// inital state
-export const initialState = {
-  cart: [],
-};
+
 // get cart from local storage
+const getFromLocalStorage = () => {
+  const cart = JSON.parse(localStorage.getItem("cart"));
+
+  if (!cart || Date.now > cart?.timestamp){
+    return clearLocalStorage();
+  } 
+  
+    else return cart.data;
+};
 
 // save cart to local storage
+const saveToLocalStorage = (cart) => {
+  const data = {
+    data: cart,
+    timestamp: Date.now() + 1000 * 60 * 60, // { 1 hr }
+  };
+
+  localStorage.setItem("cart", JSON.stringify(data));
+};
+
+const clearLocalStorage = () => {
+  localStorage.removeItem("cart");
+  return [];
+};
+
+// inital state
+export const initialState = {
+  cart: getFromLocalStorage(),
+};
 
 // get item total
 export const getTotalPrice = (cart) =>
   cart?.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
 
 // get cart quantity
-export const getItemTotal = (cart) =>
+export const getItemTotal = (cart) => 
   cart?.reduce((total, item) => total + item.quantity, 0);
 
 // increase item qty
 const addToCart = (cart, newItem) => {
-
   const index = cart.findIndex((item) => item.id === newItem.id);
 
+  let newCart = cart;
+
   if (index === -1) {
-    const updatedCart = [...cart, { ...newItem, quantity: 1 }];
-    return updatedCart;
-  }
+    newCart = [...cart, { ...newItem, quantity: 1 }];
+  } 
 
   else {
-    cart[index].quantity++;
+    newCart[index].quantity++;
   }
 
-  return cart;
+  saveToLocalStorage(newCart);
+  return newCart;
+
 };
 
 // decrease item qty
 const removeFromCart = (cart, newItemId) => {
   const index = cart.findIndex((item) => item.id === newItemId);
 
-  if (cart[index].quantity === 1) {
-    const newCart = cart.filter((item) => item.id !== newItemId);
-    return newCart;
+  let newCart = cart;
+
+  if (newCart[index].quantity === 1) {
+    newCart = newCart.filter((item) => item.id !== newItemId);
+
+    if(!newCart.length){
+      return clearLocalStorage();
+    }
   } 
   
   else {
-    cart[index].quantity--;
+    newCart[index].quantity--;
   }
 
-  return cart;
+  saveToLocalStorage(newCart);
+  return newCart;
 };
 
 // reducer
