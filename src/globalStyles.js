@@ -32,6 +32,11 @@ const StyledH2 = styled.h2`
   font-weight: normal;
 `;
 
+const StyledH3 = styled.h3`
+  font-family: "Poiret One", cursive;
+  font-size: 1.5rem;
+`;
+
 const Paragraph = styled.p`
   color: #7b7878;
   font-family: "Roboto", sans-serif;
@@ -66,6 +71,7 @@ export {
   GlobalStyle,
   Container,
   StyledH2,
+  StyledH3,
   Paragraph,
   Button,
   PatternBackground,

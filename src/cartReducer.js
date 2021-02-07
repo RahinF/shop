@@ -91,6 +91,12 @@ const reducer = (state, action) => {
         cart: removeFromCart(state.cart, action.id),
       };
 
+      case "CLEAR_CART":
+      return {
+        ...state,
+        cart: clearLocalStorage(),
+      };
+
     default:
       return state;
   }
