@@ -3,11 +3,11 @@
 const getFromLocalStorage = () => {
   const cart = JSON.parse(localStorage.getItem("cart"));
 
-  if (!cart || Date.now > cart?.timestamp){
+  if (!cart || Date.now() > cart?.timestamp) {
     return clearLocalStorage();
-  } 
-  
-    else return cart.data;
+  }
+
+  else return cart.data;
 };
 
 // save cart to local storage
@@ -35,7 +35,7 @@ export const getTotalPrice = (cart) =>
   cart?.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
 
 // get cart quantity
-export const getItemTotal = (cart) => 
+export const getItemTotal = (cart) =>
   cart?.reduce((total, item) => total + item.quantity, 0);
 
 // increase item qty
@@ -46,7 +46,7 @@ const addToCart = (cart, newItem) => {
 
   if (index === -1) {
     newCart = [...cart, { ...newItem, quantity: 1 }];
-  } 
+  }
 
   else {
     newCart[index].quantity++;
@@ -66,11 +66,11 @@ const removeFromCart = (cart, newItemId) => {
   if (newCart[index].quantity === 1) {
     newCart = newCart.filter((item) => item.id !== newItemId);
 
-    if(!newCart.length){
+    if (!newCart.length) {
       return clearLocalStorage();
     }
-  } 
-  
+  }
+
   else {
     newCart[index].quantity--;
   }
@@ -91,7 +91,7 @@ const reducer = (state, action) => {
         cart: removeFromCart(state.cart, action.id),
       };
 
-      case "CLEAR_CART":
+    case "CLEAR_CART":
       return {
         ...state,
         cart: clearLocalStorage(),
