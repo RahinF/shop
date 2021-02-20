@@ -5,6 +5,7 @@ import { Container, Paragraph } from "./globalStyles";
 import styled from "styled-components";
 import { getItemTotal, getTotalPrice } from "./cartReducer";
 import CurrencyFormat from "react-currency-format";
+import Button from './Button'
 
 const CheckoutContainer = styled(Container)`
   margin-top: 3rem;
@@ -61,8 +62,8 @@ function Checkout() {
           />
         </p>
 
-        <button>Checkout</button>
-        <button onClick={clearCart}>Clear</button>
+         <Button text='Checkout' />
+         <Button onClick={clearCart} text='Clear' outline/>
       </Summary>
     </CheckoutContainer>
   );

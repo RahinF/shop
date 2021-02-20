@@ -3,6 +3,7 @@ import { useCartContext } from "./CartProvider";
 import styled from "styled-components";
 import { Paragraph, StyledH3 } from "./globalStyles";
 import CurrencyFormat from "react-currency-format";
+import Button from './Button'
 
 const ProductContainer = styled.div`
   ${(props) =>
@@ -59,10 +60,19 @@ function Product({ id, name, price, quantity, isCheckout }) {
 
       {isCheckout && <Paragraph>Quantity: {quantity}</Paragraph>}
 
-      <ButtonContainer>
-        <button onClick={addToCart}>{isCheckout ? "+" : "Add to Cart"}</button>
-        {isCheckout && <button onClick={removeFromCart}>-</button>}
-      </ButtonContainer>
+      
+        
+        
+        {isCheckout ? 
+        <ButtonContainer>
+          <Button onClick={addToCart} text="+" size='sm' outline/>
+          <Button onClick={removeFromCart} text='-' size='sm' outline/> 
+        </ButtonContainer>
+         :
+        <Button onClick={addToCart} text="Add to Cart"/>
+        }
+        
+      
     </ProductContainer>
   );
 }

@@ -44,21 +44,6 @@ const Paragraph = styled.p`
   line-height: 1.6;
 `;
 
-const Button = styled.button`
-  background: none;
-  border: 3px solid #f649ce;
-  color: #f649ce;
-  padding: 1rem 3rem;
-  font-family: "Roboto", sans-serif;
-  font-size: 22px;
-
-  &:hover {
-    background: #f649ce;
-    color: #fff;
-    cursor: pointer;
-  }
-`;
-
 const PatternBackground = styled.div`
   background: url(${bgPattern});
   background-size: 10px 10px;
@@ -73,6 +58,5 @@ export {
   StyledH2,
   StyledH3,
   Paragraph,
-  Button,
   PatternBackground,
 };

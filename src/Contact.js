@@ -1,9 +1,10 @@
 import React from 'react'
+import {Container} from './globalStyles'
 
 function Contact() {
     return (
 
-        <div>
+        <Container>
             <div>
                 <h1>title</h1>
                 <p>
@@ -19,7 +20,7 @@ function Contact() {
                 </div>
             </div>
             <div>image</div>
-        </div>
+        </Container>
     )
 }
 

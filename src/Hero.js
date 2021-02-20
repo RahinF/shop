@@ -3,8 +3,9 @@ import SocialMedia from "./SocialMedia";
 import styled from "styled-components";
 import LazyImage from "./LazyImage";
 import heroImage from "./hero-image.jpg";
-import { Container, Paragraph, Button, PatternBackground } from "./globalStyles";
+import { Container, Paragraph,  PatternBackground } from "./globalStyles";
 import { mediaQueries } from "./mediaQueries";
+import Button from './Button'
 
 const Grid = styled(Container)`
   display: grid;
@@ -92,7 +93,7 @@ function Hero() {
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio cumque
           provident aut et mollitia.
         </Text>
-        <Button>Shop Now</Button>
+        <Button text='Shop Now' size='lg' outline/>
       </TextContainer>
 
       <SocialMediaContainer>
