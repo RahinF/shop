@@ -2,6 +2,7 @@ import React from "react";
 import SocialMedia from "./SocialMedia";
 import { Container, StyledH3 } from "./globalStyles";
 import styled from "styled-components";
+import { fonts } from "./theme";
 
 const FlexContainer = styled.div`
   display: flex;
@@ -25,7 +26,7 @@ const LogoContainer = styled.div`
 
 const Logo = styled.h1`
   justify-self: center;
-  font-family: "Poiret One", cursive;
+  font-family: ${fonts['heading']};
   font-size: 2.6rem;
   font-weight: normal;
   color: #f649ce;

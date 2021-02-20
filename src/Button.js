@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import { fonts } from "./theme";
 
 const btnSize = { default: 2, sm: 1, lg: 3 };
 const fontSize = { default: 18, sm: 16, lg: 22 };
 
 const StyledButton = styled.button`
   cursor: pointer;
-  font-family: "Roboto", sans-serif;
+  font-family: ${fonts['text']};
   background: ${(props) => (props.type ? "none" : "#f649ce")};
   color: ${(props) => (props.type ? "#f649ce" : "#fff")};
   border: 3px solid #f649ce;

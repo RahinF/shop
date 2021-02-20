@@ -1,6 +1,7 @@
 import styled, { createGlobalStyle } from "styled-components";
 import bgPattern from "./bg-pattern.svg";
 import { mediaQueries } from "./mediaQueries";
+import {fonts} from './theme'
 
 const GlobalStyle = createGlobalStyle`
 body {
@@ -27,19 +28,19 @@ const Container = styled.div`
 `;
 
 const StyledH2 = styled.h2`
-  font-family: "Poiret One", cursive;
+  font-family: ${fonts['heading']};
   font-size: 3rem;
   font-weight: normal;
 `;
 
 const StyledH3 = styled.h3`
-  font-family: "Poiret One", cursive;
+  font-family: ${fonts['heading']};
   font-size: 1.5rem;
 `;
 
 const Paragraph = styled.p`
   color: #7b7878;
-  font-family: "Roboto", sans-serif;
+  font-family: ${fonts['text']};;
   font-size: 1.3rem;
   line-height: 1.6;
 `;

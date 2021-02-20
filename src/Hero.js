@@ -6,6 +6,7 @@ import heroImage from "./hero-image.jpg";
 import { Container, Paragraph,  PatternBackground } from "./globalStyles";
 import { mediaQueries } from "./mediaQueries";
 import Button from './Button'
+import { fonts } from "./theme";
 
 const Grid = styled(Container)`
   display: grid;
@@ -21,7 +22,7 @@ const Grid = styled(Container)`
 
 const Heading = styled.h1`
   align-self: end;
-  font-family: "Poiret One", cursive;
+  font-family: ${fonts['heading']};
   font-size: 4rem;
   font-weight: normal;
 

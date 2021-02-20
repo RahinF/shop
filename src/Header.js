@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { useCartContext } from "./CartProvider";
 import { getItemTotal } from "./cartReducer";
 import { Container } from "./globalStyles";
+import { fonts } from "./theme";
 
 const links = [
   {
@@ -49,12 +50,12 @@ const StyledUl = styled.ul`
   list-style: none;
 `;
 const StyledLi = styled.li`
-  font-family: "Roboto", sans-serif;
+  font-family: ${fonts['text']};
   font-size: 22px;
 `;
 const Logo = styled.h1`
   justify-self: center;
-  font-family: "Poiret One", cursive;
+  font-family: ${fonts['heading']};
   font-size: 2.6rem;
   font-weight: normal;
   color: #f649ce;
