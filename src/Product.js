@@ -65,8 +65,8 @@ function Product({ id, name, price, quantity, isCheckout }) {
         
         {isCheckout ? 
         <ButtonContainer>
-          <Button onClick={addToCart} text="+" size='sm' outline/>
-          <Button onClick={removeFromCart} text='-' size='sm' outline/> 
+          <Button onClick={addToCart} text="+" size='sm' type='outline'/>
+          <Button onClick={removeFromCart} text='-' size='sm' type='outline'/> 
         </ButtonContainer>
          :
         <Button onClick={addToCart} text="Add to Cart"/>

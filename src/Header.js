@@ -66,8 +66,11 @@ const LinkText = styled.span`
 `;
 
 const CartTotal = styled.div`
-  background: #8d8d8d;
+  border: 2px solid #f649ce;
   padding: 0.3rem;
+  font-family: ${fonts['text']};
+  font-weight: bold;
+  color: #f649ce; 
 `;
 
 function Header() {

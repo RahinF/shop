@@ -7,9 +7,9 @@ const fontSize = { default: 18, sm: 16, lg: 22 };
 
 const StyledButton = styled.button`
   cursor: pointer;
-  font-family: ${fonts['text']};
-  background: ${(props) => (props.type ? "none" : "#f649ce")};
-  color: ${(props) => (props.type ? "#f649ce" : "#fff")};
+  font-family: ${fonts["text"]};
+  background: ${(props) => (props.type === "outline" ? "none" : "#f649ce")};
+  color: ${(props) => (props.type  === 'outline' ? "#f649ce" : "#fff")};
   border: 3px solid #f649ce;
 
   padding: ${(props) => {
@@ -26,15 +26,15 @@ const StyledButton = styled.button`
     props.size ? fontSize[props.size] : fontSize["default"]}px;
 
   &:hover {
-    background: ${(props) => (props.type ? "#f649ce" : "#c43aa4")};
-    border: 3px solid ${(props) => (props.type ? "transparent" : "#c43aa4")};
+    background: ${(props) => (props.type === "outline" ? "#f649ce" : "#c43aa4")};
+    border: 3px solid ${(props) => (props.type === "outline" ? "transparent" : "#c43aa4")};
     color: #fff;
   }
 `;
 
-function Button({ size, outline, text, onClick }) {
+function Button({ size, type, text, onClick }) {
   return (
-    <StyledButton size={size} type={outline} onClick={onClick}>
+    <StyledButton size={size} type={type} onClick={onClick}>
       {text}
     </StyledButton>
   );

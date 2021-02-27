@@ -1,1 +1,1 @@
-export const fonts = { heading: '"Poiret One", cursive;', text: '"Roboto", sans-serif;' }
+export const fonts = { heading: 'Poiret One, cursive', text: 'Roboto, sans-serif' }

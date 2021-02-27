@@ -37,6 +37,7 @@ const Flexbox = styled(Container)`
   `}
 
   margin-top: 165px;
+  gap: 1rem;
 `;
 
 const container = {

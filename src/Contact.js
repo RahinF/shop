@@ -1,27 +1,41 @@
-import React from 'react'
-import {Container} from './globalStyles'
+import React from "react";
+import { Container, StyledH2, Paragraph } from "./globalStyles";
+import styled from "styled-components";
+import Button from "./Button";
+
+const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
+`;
+
+const FormContainer = styled.div`
+  display: flex;
+`;
 
 function Contact() {
-    return (
+  return (
+    <Container>
+      <div>
+        <StyledH2>Contact Us</StyledH2>
+        <Paragraph>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga
+          repudiandae, magnam a corrupti modi obcaecati!
+        </Paragraph>
+      </div>
 
-        <Container>
-            <div>
-                <h1>title</h1>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga
-                    repudiandae, magnam a corrupti modi obcaecati!
-        </p>
-                <div>
-                    <form>
-                        <input type="text"/>
-                        <input type="email"/>
-                        <textarea></textarea>
-                    </form>
-                </div>
-            </div>
-            <div>image</div>
-        </Container>
-    )
+      <FormContainer>
+        <div>image</div>
+
+        <StyledForm>
+          <input type="text" placeholder="title" />
+          <input type="email" placeholder="your email address" />
+          <textarea placeholder="your message to us"></textarea>
+          <Button text="Submit" />
+        </StyledForm>
+        
+      </FormContainer>
+    </Container>
+  );
 }
 
-export default Contact
+export default Contact;

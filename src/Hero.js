@@ -2,7 +2,7 @@ import React from "react";
 import SocialMedia from "./SocialMedia";
 import styled from "styled-components";
 import LazyImage from "./LazyImage";
-import heroImage from "./hero-image.jpg";
+import heroImage from "./assets/hero-image.jpg";
 import { Container, Paragraph,  PatternBackground } from "./globalStyles";
 import { mediaQueries } from "./mediaQueries";
 import Button from './Button'
@@ -62,6 +62,7 @@ const SocialMediaContainer = styled.div`
     width: 117px;
     height: 2px;
     background: #7b7878;
+    margin: 0 3rem;
   }
 `;
 
@@ -94,7 +95,7 @@ function Hero() {
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio cumque
           provident aut et mollitia.
         </Text>
-        <Button text='Shop Now' size='lg' outline/>
+        <Button text='Shop Now' size='lg' type='outline'/>
       </TextContainer>
 
       <SocialMediaContainer>

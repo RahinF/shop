@@ -1,17 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import twitterIcon from "./twitter-icon.svg";
-import facebookIcon from "./facebook-icon.svg";
-import instagramIcon from "./instagram-icon.svg";
+import twitterIcon from "./assets/twitter-icon.svg";
+import facebookIcon from "./assets/facebook-icon.svg";
+import instagramIcon from "./assets/instagram-icon.svg";
 
 const Container = styled.div`
-  padding: 0 1rem;
   display: flex;
   align-items: center;
+  width: 150px;
+  justify-content: space-between;
 `;
 
 const Icon = styled.span`
-  padding 0 1rem;
   cursor: pointer;
 `;
 

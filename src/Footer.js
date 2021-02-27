@@ -24,9 +24,13 @@ const LogoContainer = styled.div`
   }
 `;
 
+const Heading = styled(StyledH3)`
+  margin-bottom: 3rem;
+`;
+
 const Logo = styled.h1`
   justify-self: center;
-  font-family: ${fonts['heading']};
+  font-family: ${fonts["heading"]};
   font-size: 2.6rem;
   font-weight: normal;
   color: #f649ce;
@@ -36,6 +40,49 @@ const Logo = styled.h1`
 const FooterContainer = styled.footer`
   margin-top: 3rem;
   margin-bottom: 3rem;
+`;
+
+const LinksContainer = styled.div`
+  display: flex;
+
+  ul {
+    margin: 0;
+
+    :first-child {
+      padding-left: 0;
+    }
+  }
+
+  li {
+    font-family: ${fonts["text"]};
+    list-style: none;
+    cursor: pointer;
+    line-height: 1.7;
+  }
+`;
+
+const NewsletterForm = styled.form`
+  border-bottom: 2px solid #7b7878;
+  padding-bottom: 0.5rem;
+  font-family: ${fonts["text"]};
+
+  input {
+    font-size: 1rem;
+    border: none;
+    outline: none;
+  }
+
+  &:focus-within {
+    border-bottom: 2px solid #f649ce;
+  }
+
+  button {
+    font-size: 1rem;
+    font-family: ${fonts["text"]};
+    background: none;
+    border-style: none;
+    cursor: pointer;
+  }
 `;
 
 function Footer() {
@@ -48,17 +95,17 @@ function Footer() {
 
         <FlexContainer>
           <div>
-            <StyledH3>Newsletter</StyledH3>
+            <Heading>Newsletter</Heading>
 
-            <form>
+            <NewsletterForm>
               <input type="text" placeholder="your email address" />
               <button type="submit">submit</button>
-            </form>
+            </NewsletterForm>
           </div>
 
           <div>
-            <StyledH3>Menu</StyledH3>
-            <div>
+            <Heading>Menu</Heading>
+            <LinksContainer>
               <ul>
                 <li>Link 1</li>
                 <li>Link 2</li>
@@ -70,14 +117,13 @@ function Footer() {
                 <li>Longer Link 2</li>
                 <li>Longer Link 3</li>
               </ul>
-            </div>
+            </LinksContainer>
           </div>
 
           <div>
-            <StyledH3>Stay Social</StyledH3>
+            <Heading>Stay Social</Heading>
             <SocialMedia />
           </div>
-          
         </FlexContainer>
       </Container>
     </FooterContainer>
