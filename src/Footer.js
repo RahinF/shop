@@ -3,6 +3,7 @@ import SocialMedia from "./SocialMedia";
 import { Container, StyledH3 } from "./globalStyles";
 import styled from "styled-components";
 import { fonts } from "./theme";
+import arrow from "./assets/arrow.svg";
 
 const FlexContainer = styled.div`
   display: flex;
@@ -62,6 +63,7 @@ const LinksContainer = styled.div`
 `;
 
 const NewsletterForm = styled.form`
+  display: flex;
   border-bottom: 2px solid #7b7878;
   padding-bottom: 0.5rem;
   font-family: ${fonts["text"]};
@@ -70,6 +72,7 @@ const NewsletterForm = styled.form`
     font-size: 1rem;
     border: none;
     outline: none;
+    background: none;
   }
 
   &:focus-within {
@@ -82,6 +85,14 @@ const NewsletterForm = styled.form`
     background: none;
     border-style: none;
     cursor: pointer;
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:hover {
+      color: #f649ce;
+    }    
   }
 `;
 
@@ -99,7 +110,10 @@ function Footer() {
 
             <NewsletterForm>
               <input type="text" placeholder="your email address" />
-              <button type="submit">submit</button>
+              <button type="submit">
+                submit
+                <img src={arrow} alt="submit" />
+              </button>
             </NewsletterForm>
           </div>
 

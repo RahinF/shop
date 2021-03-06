@@ -3,19 +3,20 @@ import { useCartContext } from "./CartProvider";
 import styled from "styled-components";
 import { Paragraph, StyledH3 } from "./globalStyles";
 import CurrencyFormat from "react-currency-format";
-import Button from './Button'
+import Button from "./Button";
 
 const ProductContainer = styled.div`
   ${(props) =>
     props.checkout ? `display: flex; justify-content: space-around;` : ""};
   border: 1px solid #8d8d8d;
   padding: 1rem;
+  height: fit-content;
 `;
 
 const PlaceholderImage = styled.div`
   background: ${(props) => (props.checkout ? `red` : `blue`)};
-  height: 400px;
-  width: 300px;
+  height: ${(props) => (props.checkout ? `133px` : `400px`)};
+  width: ${(props) => (props.checkout ? `100px` : `300px`)};
 
   ${(props) => (props.checkout ? `` : "margin: auto;")};
 `;
@@ -23,6 +24,12 @@ const PlaceholderImage = styled.div`
 const ButtonContainer = styled.div`
   display: flex;
   align-items: center;
+
+  button {
+    &:first-child {
+      margin-right: 0.5rem;
+    }
+  }
 `;
 
 const Price = styled(StyledH3)``;
@@ -45,7 +52,6 @@ function Product({ id, name, price, quantity, isCheckout }) {
     <ProductContainer checkout={isCheckout}>
       <PlaceholderImage checkout={isCheckout} />
 
-
       <div>
         <Paragraph>{name}</Paragraph>
         <Price>
@@ -60,19 +66,14 @@ function Product({ id, name, price, quantity, isCheckout }) {
 
       {isCheckout && <Paragraph>Quantity: {quantity}</Paragraph>}
 
-      
-        
-        
-        {isCheckout ? 
+      {isCheckout ? (
         <ButtonContainer>
-          <Button onClick={addToCart} text="+" size='sm' type='outline'/>
-          <Button onClick={removeFromCart} text='-' size='sm' type='outline'/> 
+          <Button onClick={addToCart} text="+" size="sm" type="outline" />
+          <Button onClick={removeFromCart} text="-" size="sm" type="outline" />
         </ButtonContainer>
-         :
-        <Button onClick={addToCart} text="Add to Cart"/>
-        }
-        
-      
+      ) : (
+        <Button onClick={addToCart} text="Add to Cart" />
+      )}
     </ProductContainer>
   );
 }
